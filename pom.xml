@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.javacodegeeks.examples</groupId>
+	<artifactId>segment</artifactId>
+	<version>1</version>
+	<name>Maven war ::  example</name>
+	<url>http://maven.apache.org</url>
+	<packaging>war</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>4.2.4.RELEASE</version>
+			<optional>true</optional>
+		</dependency>
+
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.segment.analytics.java</groupId>
+			<artifactId>analytics</artifactId>
+			<version>LATEST</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>LATEST</version>
+		</dependency>
+	</dependencies>
+
+	<repositories>
+		<repository>
+		    <id>ossrh</id>
+		    <name>Sonatype Snapshot Repository</name>
+		    <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+		    <releases>
+			<enabled>false</enabled>
+		    </releases>
+		    <snapshots>
+			<enabled>true</enabled>
+		    </snapshots>
+		</repository>
+	</repositories>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+			ds		<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+
+			<plugin>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<configuration>
+			    <source>1.7</source>
+			    <target>1.7</target>
+			</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>
